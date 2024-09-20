@@ -1,83 +1,58 @@
-Project Nebula
+Gold Grid
+ 
 Overview
-Mission Name: Project Nebula
-Objective:
-Welcome to Project Nebula, a revolutionary initiative aimed at creating a centralized, interactive platform designed to enhance Azubi Africa's operational, educational, and community engagement efforts. By leveraging the power of cloud technologies, Python, Docker, and Linux, this project seeks to build a robust and scalable solution for students, educators, and the community.
-
-Key Phases
-Phase 1: The Blueprint (Front-End Expedition)
-Dashboard Planet:
-Build a personalized dashboard where students can track their journey and growth. This will provide an intuitive and interactive interface for users, allowing them to monitor key milestones, courses, and progress.
-
-Configuration Site:
-Test back-end and database connections, ensuring smooth data flow and interaction between components. This phase will focus on creating a stable foundation for data communication.
-
-Phase 2: The Core (Back-End Odyssey)
-API Blackholes:
-Use Python to create APIs that bridge the gap between the front end and back end. These APIs will manage requests, responses, and data flows seamlessly, ensuring all components communicate effectively.
-
-Database Supernova:
-Utilize AWS services to build a secure, scalable, and efficient database that stores essential data. The database will be the project's backbone, managing everything from user profiles to educational content.
-
-Dockerized Continuum:
-Containerize the application using Docker to ensure it operates consistently across multiple environments, from development to production.
-
-Tools and Technologies
-AWS:
-For secure, scalable, and reliable infrastructure, database services, and deployment.
-
-Python:
-The core programming language for API development and back-end logic.
-
-Docker:
-Containerization tool for ensuring consistent development, testing, and deployment environments.
-
-Linux:
-For a stable and secure server environment.
-
-Getting Started
+Gold Grid  is a student management system designed to help administrators manage student data efficiently. It includes both a front-end interface and a back-end infrastructure that work together to provide features such as user management, dashboards, and time stamping. The app communicates with the back-end through APIs and stores data in a DynamoDB table.
+ 
+Front-End
+- Dashboard: A user-friendly interface for viewing and managing student information.
+- Create New Users: Add new students or administrators to the system.
+- Time Stamp: Record and manage time entries for various events or actions.
+ 
+Back-End
+- DynamoDB Table: The app's back-end includes a DynamoDB table for securely storing and managing student data.
+- API Communication: Front-end and back-end communicate via APIs, handling data requests and updates.
+ 
+AWS Services Used
+- AWS Elastic Container Registry (ECR): To store and manage Docker container images for deployment.
+- AWS Lambda: For executing back-end functions such as API requests.
+- AWS DynamoDB: A fast, fully managed NoSQL database to store student data.
+- AWS API Gateway: To create and manage APIs that allow the front end to communicate with the back end.
+- AWS CloudWatch: For monitoring and logging the performance of the app.
+- AWS IAM: To manage access control for various AWS services used by the app.
+ 
+ 
+ 
+ 
+ 
 Prerequisites
-To get started with Project Nebula, you’ll need:
-
-AWS account
-Python 3.x installed
-Docker installed
-Git for version control
-Linux (Ubuntu or similar) for development or deployment
+To get started with the Gold Grid, you'll need:
+- An AWS account
+- Docker installed
+- Python 3.x installed
+- Git for version control
+ 
 Installation
-Clone the repository:
-
-bash
-Copy code
-git clone https://github.com/your-repo/Project-Nebula.git
-cd Project-Nebula
-Set up your Python environment:
-
-bash
-Copy code
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-Build and run Docker containers:
-
-bash
-Copy code
-docker-compose up --build
-Deployment
-Project Nebula uses AWS for deployment. Make sure to configure your AWS CLI with proper credentials.
-
-Push Docker images to AWS ECR:
-
-bash
-Copy code
-docker build -t final-project .
-aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/your-repo
-docker push public.ecr.aws/your-repo/final-project:latest
-Deploy using AWS services such as Elastic Beanstalk or EC2.
-
-Contribution Guidelines
-Fork the repository.
-Create a new feature branch (git checkout -b feature/new-feature).
-Commit your changes (git commit -m 'Add new feature').
-Push to the branch (git push origin feature/new-feature).
-Open a pull request.
+1. Clone the repository from GitHub:
+   git clone https://github.com/your-repo/Gold-Grid.git
+   cd Gold-Grid
+2. Set up your Python environment:
+3. Build and run the Docker containers:
+ 
+AWS Deployment Steps:
+1. Build Docker Image
+2. Push Docker Image to AWS ECR
+ 
+AWS Configuration
+1. Create a DynamoDB Table:
+  - Define the necessary attributes (e.g., StudentID, UserInfo).
+2. Set up AWS API Gateway:
+  - Create REST APIs for communication between the front-end and back-end.
+3. Configure AWS Lambda:
+  - Use Lambda functions for handling specific back-end logic (Post and Get).
+ 
+ 
+ 
+4. Monitor via CloudWatch:
+  - Set up CloudWatch for logging and monitoring the performance of your app.
+ 
+ 
